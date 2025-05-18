@@ -44,3 +44,6 @@
 
 ;; Sideline (sidebar)
 (load (expand-file-name "sideline.el" (file-name-directory load-file-name)))
+
+;; Marginalia
+(load (expand-file-name "marginalia.el" (file-name-directory load-file-name)))
