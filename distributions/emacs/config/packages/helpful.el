@@ -5,7 +5,7 @@
 ;; Import helpful
 (require 'helpful)
 
-;; Helpful configuration
+;; Configuration
 
 ;; Keybinds
 
