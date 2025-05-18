@@ -56,3 +56,6 @@
 
 ;; Web-mode (for web editing like HTML, Javascript, etc)
 (load (expand-file-name "web-mode.el" (file-name-directory load-file-name)))
+
+;; Verb HTTP client
+; (load (expand-file-name "verb.el" (file-name-directory load-file-name)))
