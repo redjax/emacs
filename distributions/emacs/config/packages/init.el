@@ -26,3 +26,6 @@
 
 ;; Helpful, better help buffer
 (load (expand-file-name "helpful.el" (file-name-directory load-file-name)))
+
+;; Sublimity, codemap & sublime-like editing
+(load (expand-file-name "sublimity.el" (file-name-directory load-file-name)))
