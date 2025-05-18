@@ -39,13 +39,13 @@ install_emacs_redhat() {
   sudo dnf install -y gcc gcc-c++ make gtk3-devel gnutls-devel jansson-devel libgccjit-devel \
     libXpm-devel libjpeg-turbo-devel giflib-devel libtiff-devel ncurses-devel wget
 
-  cd /tmp || exit 1
+  cd /tmp || return 1
 
   wget https://ftp.gnu.org/gnu/emacs/emacs-"${EMACS_VER}".tar.xz
 
   tar -xf emacs-"${EMACS_VER}".tar.xz
 
-  cd emacs-"${EMACS_VER}" || exit 1
+  cd emacs-"${EMACS_VER}" || return 1
 
   ./configure --with-native-compilation --with-json --with-modules
   make -j"$(nproc)"
@@ -56,6 +56,31 @@ install_emacs() {
   EMACS_VER=$1
   local distro
   distro=$(get_distro)
+
+  if command -v emacs &> /dev/null; then
+    echo "Emacs is already installed."
+    return 0
+  fi
+
+  if ! command -v wget &> /dev/null; then
+    echo "wget is not installed."
+    return 1
+  fi
+
+  if ! command -v tar &> /dev/null; then
+    echo "tar is not installed."
+    return 1
+  fi
+
+  if ! command -v make &> /dev/null; then
+    echo "make is not installed."
+    return 1
+  fi
+
+  if ! command -v gcc &> /dev/null; then
+    echo "gcc is not installed."
+    return 1
+  fi
 
   case "$distro" in
     ubuntu|debian|raspbian)
@@ -69,7 +94,7 @@ install_emacs() {
     *)
       echo "Unsupported or unknown distro: $distro"
       echo "Please install dependencies and Emacs manually."
-      exit 1
+      return 1
       ;;
   esac
 }
@@ -77,4 +102,5 @@ install_emacs() {
 ## If script is called directly, run the install function
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   install_emacs "$EMACS_VERSION"
+  exit $?
 fi
