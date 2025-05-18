@@ -44,3 +44,6 @@
 
 ;; Vertico vertical completion
 (load (expand-file-name "vertico.el" (file-name-directory load-file-name)))
+
+;; Marginalia
+(load (expand-file-name "marginalia.el" (file-name-directory load-file-name)))
