@@ -52,4 +52,10 @@
 ; (load (expand-file-name "icons-in-terminal.el" (file-name-directory load-file-name)))
 
 ;; Pulsar
-(load (expand-file-name "pulsar" (file-name-directory load-file-name)))
+(load (expand-file-name "pulsar.el" (file-name-directory load-file-name)))
+
+;; Web-mode (for web editing like HTML, Javascript, etc)
+(load (expand-file-name "web-mode.el" (file-name-directory load-file-name)))
+
+;; Verb HTTP client
+; (load (expand-file-name "verb.el" (file-name-directory load-file-name)))
