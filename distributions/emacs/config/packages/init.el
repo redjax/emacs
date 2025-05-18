@@ -44,3 +44,6 @@
 
 ;; Avy
 ; (load (expand-file-name "avy.el" (file-name-directory load-file-name)))
+
+;; Marginalia
+(load (expand-file-name "marginalia.el" (file-name-directory load-file-name)))
