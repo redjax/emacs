@@ -2,3 +2,4 @@ emacs/*
 
 !emacs/
 !emacs/init.el
+!emacs/config
