@@ -12,5 +12,11 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
+if ! command -v git &> /dev/null; then
+  echo "git is not installed."
+  exit 1
+fi
+
 ## Execute doom installer
+git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs
 ~/.config/emacs/bin/doom install

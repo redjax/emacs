@@ -12,4 +12,5 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-## TODO: Write spacemacs install commands
+## Clone spacemacs
+git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
