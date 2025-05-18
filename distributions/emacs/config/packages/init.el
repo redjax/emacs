@@ -23,3 +23,6 @@
 
 ;; Magit git interface
 ; (load (expand-file-name "magit.el" (file-name-directory load-file-name)))
+
+;; Helpful, better help buffer
+(load (expand-file-name "helpful.el" (file-name-directory load-file-name)))
