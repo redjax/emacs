@@ -3,6 +3,9 @@
 ;  This should only be uncommented as a troubleshooting step
 ;; (setq package-check-signature nil)
 
+;; Suppress non-critical warnings from package init
+(setq warning-suppress-types '((comp)))
+
 ;; Import config modules
 (load (expand-file-name "config/keyring.el" user-emacs-directory))
 (load (expand-file-name "config/packages/init.el" user-emacs-directory))
