@@ -1,4 +1,4 @@
-;; Install leaf if not present
+;; Install leaf https://github.com/conao3/leaf.el
 (unless (package-installed-p 'leaf)
   (package-refresh-contents)
   (package-install 'leaf))

@@ -1,4 +1,4 @@
-;; Install dashboard.el if not already installed
+;; Install dashboard.el https://github.com/emacs-dashboard/emacs-dashboard
 (unless (package-installed-p 'dashboard)
   (package-refresh-contents)
   (package-install 'dashboard))

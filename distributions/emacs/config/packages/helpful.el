@@ -1,4 +1,4 @@
-;; Install helpful
+;; Install helpful https://github.com/Wilfred/helpful
 (unless (package-installed-p 'helpful)
   (package-install 'helpful))
 
