@@ -59,3 +59,6 @@
 
 ;; Verb HTTP client
 ; (load (expand-file-name "verb.el" (file-name-directory load-file-name)))
+
+;; Centaur tabs
+(load (expand-file-name "centaur-tabs.el" (file-name-directory load-file-name)))
