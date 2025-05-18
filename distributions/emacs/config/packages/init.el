@@ -29,3 +29,6 @@
 
 ;; Sublimity, codemap & sublime-like editing
 (load (expand-file-name "sublimity.el" (file-name-directory load-file-name)))
+
+;; Ace popup menu
+(load (expand-file-name "ace-popup-menu.el" (file-name-directory load-file-name)))
