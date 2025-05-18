@@ -12,3 +12,6 @@
 
 ;; Set UTF-8 as default encoding
 (prefer-coding-system 'utf-8)
+
+;; Set fido to use vertical mode for autocompletions
+(fido-vertical-mode 1)
