@@ -1,49 +1,92 @@
 #!/bin/bash
 
-info() { echo "[INFO] $@"; }
-debug() { echo "[DEBUG] $@"; }
-warning() { echo "[WARNING] $@"; }
-error() { echo "[ERROR] $@"; }
+## Logging functions
+info()    { echo "[INFO] $*"; }
+debug()   { echo "[DEBUG] $*"; }
+warning() { echo "[WARNING] $*"; }
+error()   { echo "[ERROR] $*" >&2; }
 
-CWD=$(pwd)
-debug "Script dir: $CWD"
+## Allowed config options (which emacs distribution to use)
+CONFIG_OPTIONS=("doom" "spacemacs" "emacs")
 
+## Script paths
+CWD="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 DOTCONFIG_DIR="${HOME}/.config"
-debug ".config dir: $DOTCONFIG_DIR"
+EMACSD_DIR="${HOME}/.emacs.d"
 
-# EMACS_CONFIG_SRC="${CWD}/
-# debug "Emacs config src: $EMACS_CONFIG_SRC"
-
+## Doom emacs
 DOOM_CONFIG_SRC="${CWD}/distributions/doom"
-debug "Doom config src: $DOOM_CONFIG_SRC"
-
 DOOM_CONFIG_DEST="${DOTCONFIG_DIR}/doom"
-debug "Doom config dest: $DOOM_CONFIG_DEST"
 
-if [[ ! -d "${DOTCONFIG_DIR}" ]]; then
-    info "Path '${DOTCONFIG_DIR}' does not exist. Creating."
-    mkdir -pv "${DOTCONFIG_DIR}"
-else
-    if [[ -d $DOOM_CONFIG_DEST ]]; then
-        warning "Doom config already exists at $DOOM_CONFIG_DEST"
-    elif [ -L "${DOOM_CONFIG_DEST}" ]; then
-        info "Doom config path is a symlink. Removing link"
-        rm "${DOOM_CONFIG_DEST}"
-    else
-        info "Doom config path is not a symlink. Backing up to ${DOOM_CONFIG_DEST}.bak"
-        mv "${DOOM_CONFIG_DEST}" "${DOOM_CONFIG_DEST}.bak"
+## Spacemacs
+SPACEMACS_CONFIG_SRC="${CWD}/distributions/spacemacs"
+SPACEMACS_CONFIG_DEST="${DOTCONFIG_DIR}/spacemacs"
+
+## Vanilla emacs
+EMACS_CONFIG_SRC="${CWD}/distributions/emacs"
+EMACS_CONFIG_DEST="${EMACSD_DIR}"
+
+## Utility for safe symlink creation
+safe_symlink() {
+    local src="$1"
+    local dest="$2"
+
+    if [[ -L "$dest" ]]; then
+        info "Removing existing symlink at $dest"
+        rm "$dest"
+    elif [[ -e "$dest" ]]; then
+        info "Backing up existing $dest to ${dest}.bak"
+        mv "$dest" "${dest}.bak"
     fi
-fi
 
-info "Creating symlink from ${DOOM_CONFIG_SRC} to ${DOOM_CONFIG_DEST}"
-ln -s "${DOOM_CONFIG_SRC}" "${DOOM_CONFIG_DEST}"
+    info "Creating symlink: $dest -> $src"
+    ln -s "$src" "$dest"
 
-if [[ ! $? -eq 0 ]]; then
-    error "Error occurred creating symlink from ${DOOM_CONFIG_SRC} to ${DOOM_CONFIG_DEST}"
-    exit 1
-fi
+    if [[ $? -ne 0 || ! -L "$dest" ]]; then
+        error "Failed to create symlink for $dest"
+        exit 1
+    fi
+}
 
-if [[ ! -L "${DOOM_CONFIG_DEST}" ]]; then
-    error "Error occurred creating symlink from ${DOOM_CONFIG_SRC} to ${DOOM_CONFIG_DEST}"
-    exit 1
-fi
+## symlink doom
+symlink_doom_config() {
+    safe_symlink "$DOOM_CONFIG_SRC" "$DOOM_CONFIG_DEST"
+}
+
+## symlink spacemacs
+symlink_spacemacs_config() {
+    safe_symlink "$SPACEMACS_CONFIG_SRC" "$SPACEMACS_CONFIG_DEST"
+}
+
+## symlink vanilla emacs
+symlink_emacs_config() {
+    safe_symlink "$EMACS_CONFIG_SRC" "$EMACS_CONFIG_DEST"
+}
+
+main() {
+    local config_name="${1:-emacs}"
+
+    if [[ ! " ${CONFIG_OPTIONS[*]} " =~ " $config_name " ]]; then
+        error "Unknown config '$config_name'. Valid options: ${CONFIG_OPTIONS[*]}"
+        exit 1
+    fi
+
+    ## Ensure config directories exist
+    [[ -d "$DOTCONFIG_DIR" ]] || mkdir -pv "$DOTCONFIG_DIR"
+
+    case "$config_name" in
+        doom)
+            symlink_doom_config
+            ;;
+        spacemacs)
+            symlink_spacemacs_config
+            ;;
+        emacs)
+            symlink_emacs_config
+            ;;
+    esac
+
+    info "Symlinked $config_name configuration successfully."
+}
+
+main "$@"
