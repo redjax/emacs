@@ -47,3 +47,6 @@
 
 ;; Neotree
 ; (load (expand-file-name "neo-tree.el" (file-name-directory load-file-name)))
+
+;; Icons in terminal
+; (load (expand-file-name "icons-in-terminal.el" (file-name-directory load-file-name)))
