@@ -59,3 +59,6 @@
 
 ;; Verb HTTP client
 ; (load (expand-file-name "verb.el" (file-name-directory load-file-name)))
+
+;; Avy
+; (load (expand-file-name "avy.el" (file-name-directory load-file-name)))
