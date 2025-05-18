@@ -7,11 +7,6 @@
    ("melpa" . "https://melpa.org/packages/")
    ("gnu"   . "https://elpa.gnu.org/packages/")))
 
-;; Add marmalade package repository
-;;  http://marmalade-repo.org/
-;; (add-to-list 'package-archives
-;;   '("marmalade" . "http://marmalade-repo.org/packages/") t)
-
 ;; Initialize emacs package manager
 (package-initialize)
 
