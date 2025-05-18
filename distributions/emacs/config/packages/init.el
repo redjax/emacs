@@ -1,18 +1,17 @@
 (require 'package)
 
 ;; Setup package archives
-(customize-set-variable
- 'package-archives
- '(("org"   . "https://orgmode.org/elpa/")
-   ("melpa" . "https://melpa.org/packages/")
-   ("gnu"   . "https://elpa.gnu.org/packages/")))
+(setq package-archives
+      '(("gnu"   . "https://elpa.gnu.org/packages/")
+        ("melpa" . "https://melpa.org/packages/")
+        ("org"   . "https://orgmode.org/elpa/")))
 
 ;; Initialize emacs package manager
 (package-initialize)
 
 ;; Optionally, ensure package lists are up to date
-;; (unless package-archive-contents
-;;   (package-refresh-contents))
+(unless package-archive-contents
+  (package-refresh-contents))
 
 ;; Load 3rd party package configs
 
@@ -21,3 +20,6 @@
 
 ;; Dashboard
 (load (expand-file-name "dashboard.el" (file-name-directory load-file-name)))
+
+;; Magit git interface
+; (load (expand-file-name "magit.el" (file-name-directory load-file-name)))
