@@ -9,6 +9,9 @@
 ;; Initialize emacs package manager
 (package-initialize)
 
+;; Suppress non-critical package warnings
+(setq byte-compile-warnings '(not docstrings))
+
 ;; Optionally, ensure package lists are up to date
 (unless package-archive-contents
   (package-refresh-contents))
@@ -32,3 +35,6 @@
 
 ;; Ace popup menu
 (load (expand-file-name "ace-popup-menu.el" (file-name-directory load-file-name)))
+
+;; Yascroll
+(load (expand-file-name "yascroll.el" (file-name-directory load-file-name)))
