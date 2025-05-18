@@ -18,6 +18,9 @@
 
 ;; Load 3rd party package configs
 
+;; Nerd icons
+(load (expand-file-name "nerd-icons.el" (file-name-directory load-file-name)))
+
 ;; Leaf package manager
 (load (expand-file-name "leaf.el" (file-name-directory load-file-name)))
 
@@ -38,3 +41,6 @@
 
 ;; Yascroll
 (load (expand-file-name "yascroll.el" (file-name-directory load-file-name)))
+
+;; Dirvish
+(load (expand-file-name "dirvish.el" (file-name-directory load-file-name)))
