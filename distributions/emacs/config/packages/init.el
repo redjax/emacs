@@ -44,3 +44,6 @@
 
 ;; Dirvish
 (load (expand-file-name "dirvish.el" (file-name-directory load-file-name)))
+
+;; Neotree
+; (load (expand-file-name "neo-tree.el" (file-name-directory load-file-name)))

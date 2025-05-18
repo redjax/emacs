@@ -1,4 +1,10 @@
+;; Define the font family to install
+(defvar my/nerd-icons-font-name "Symbols Nerd Font Mono"
+  "Font name for Nerd Icons.")
+
 ;; Install nerd-icons https://github.com/emacsmirror/nerd-icons
+;; On first run, manually execute this to install your icons:
+;    M-x nerd-icons-install-fonts
 (unless (package-installed-p 'nerd-icons)
   (package-refresh-contents)
   (package-install 'nerd-icons))
@@ -9,7 +15,4 @@
 ;; Configuration
 
 ;; Set icons pack
-(setq nerd-icons-font-family "Symbols Nerd Font Mono")
-
-;; Load nerd icons (leave at bottom)
-(nerd-icons-install-fonts t)
+(setq my/nerd-icons-font-family my/nerd-icons-font-name)
