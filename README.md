@@ -102,3 +102,7 @@ When I try new distributions, I put their configuration in [the `distributions/`
   - [Github.com SystemCrafters/crafted-emacs](https://github.com/SystemCrafters/crafted-emacs)
 - [systemcrafters.net - emacs from scratch, basics of an emacs configuration](https://systemcrafters.net/emacs-from-scratch/basics-of-emacs-configuration/)
 - [sophiebos.io - First emacs config](https://sophiebos.io/posts/first-emacs-config/)
+- [Github.com conao3/leaf.el - Emacs package manager](https://github.com/conao3/leaf.el)
+- [rindrics.com - emacs package management](https://rindrics.com/emacs/package-management/)
+- [aweesome emacs](https://github.com/emacs-tw/awesome-emacs)
+- [Github.com - evm: Emacs version manager](https://github.com/rejeep/evm)
