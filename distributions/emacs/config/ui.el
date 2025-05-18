@@ -15,3 +15,10 @@
 
 ;; Set default font size
 (set-face-attribute 'default nil :height 110)
+
+;; Enable mouse mode
+(unless (display-graphic-p)
+  (xterm-mouse-mode 1))
+
+;; Cycle through windows with Shift+ArrowKey
+(windmove-default-keybindings)
