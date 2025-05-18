@@ -50,3 +50,6 @@
 
 ;; Icons in terminal
 ; (load (expand-file-name "icons-in-terminal.el" (file-name-directory load-file-name)))
+
+;; Pulsar
+(load (expand-file-name "pulsar" (file-name-directory load-file-name)))
