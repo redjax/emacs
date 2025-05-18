@@ -59,3 +59,6 @@
 
 ;; Verb HTTP client
 ; (load (expand-file-name "verb.el" (file-name-directory load-file-name)))
+
+;; Incomplete vertical
+; (load (expand-file-name "incomplete-vertical.el" (file-name-directory load-file-name)))
