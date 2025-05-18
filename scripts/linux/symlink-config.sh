@@ -10,7 +10,8 @@ error()   { echo "[ERROR] $*" >&2; }
 CONFIG_OPTIONS=("doom" "spacemacs" "emacs")
 
 ## Script paths
-CWD="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+CWD=$(pwd)
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 DOTCONFIG_DIR="${HOME}/.config"
 EMACSD_DIR="${HOME}/.emacs.d"
 
@@ -20,7 +21,7 @@ DOOM_CONFIG_DEST="${DOTCONFIG_DIR}/doom"
 
 ## Spacemacs
 SPACEMACS_CONFIG_SRC="${CWD}/distributions/spacemacs"
-SPACEMACS_CONFIG_DEST="${DOTCONFIG_DIR}/spacemacs"
+SPACEMACS_CONFIG_DEST="${HOME}/.spacemacs.d"
 
 ## Vanilla emacs
 EMACS_CONFIG_SRC="${CWD}/distributions/emacs"
@@ -39,7 +40,7 @@ safe_symlink() {
         mv "$dest" "${dest}.bak"
     fi
 
-    info "Creating symlink: $dest -> $src"
+    info "Creating symlink: $src -> $dest"
     ln -s "$src" "$dest"
 
     if [[ $? -ne 0 || ! -L "$dest" ]]; then
