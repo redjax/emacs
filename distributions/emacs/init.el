@@ -1,7 +1,10 @@
-;; Add config directory to load-path
-(add-to-list 'load-path (expand-file-name "config" user-emacs-directory))
+;; Import config modules
+(load (expand-file-name "config/packages.el" user-emacs-directory))
+(load (expand-file-name "config/leaf.el" user-emacs-directory))
+(load (expand-file-name "config/startup.el" user-emacs-directory))
+(load (expand-file-name "config/ui.el" user-emacs-directory))
+(load (expand-file-name "config/editing.el" user-emacs-directory))
 
-;; Load modules
-(load "startup.el")
-(load "ui.el")
-(load "editing.el")
+(custom-set-variables
+ '(package-selected-packages '(leaf-keywords leaf)))
+(custom-set-faces)
