@@ -4,7 +4,8 @@
 ;; (setq package-check-signature nil)
 
 ;; Suppress non-critical warnings from package init
-(setq warning-suppress-types '((comp)))
+(custom-set-variables
+ '(warning-suppress-types '((comp) (bytecomp))))
 
 ;; Import config modules
 (load (expand-file-name "config/keyring.el" user-emacs-directory))
