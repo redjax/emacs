@@ -1,0 +1,5 @@
+(unless (package-installed-p 'gnu-elpa-keyring-update)
+  (let ((package-check-signature nil))
+    (package-refresh-contents)
+    (package-install 'gnu-elpa-keyring-update)))
+(require 'gnu-elpa-keyring-update)
