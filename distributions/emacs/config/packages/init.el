@@ -59,3 +59,6 @@
 
 ;; Verb HTTP client
 ; (load (expand-file-name "verb.el" (file-name-directory load-file-name)))
+
+;; Sideline (sidebar)
+(load (expand-file-name "sideline.el" (file-name-directory load-file-name)))
