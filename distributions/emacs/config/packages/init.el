@@ -75,3 +75,6 @@
 
 ;; Company-mode
 (load (expand-file-name "company-mode/init.el" (file-name-directory load-file-name)))
+
+;; Git-timemachine
+(load (expand-file-name "git-timemachine.el" (file-name-directory load-file-name)))
