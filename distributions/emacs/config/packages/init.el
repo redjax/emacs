@@ -45,5 +45,6 @@
 ;; Marginalia
 (load (expand-file-name "marginalia.el" (file-name-directory load-file-name)))
 
-;; Corfu
+;; Corfu + cape
 (load (expand-file-name "corfu.el" (file-name-directory load-file-name)))
+(load (expand-file-name "cape.el" (file-name-directory load-file-name)))
