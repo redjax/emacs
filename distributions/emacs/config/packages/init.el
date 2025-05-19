@@ -42,6 +42,9 @@
 ;; Verb HTTP client
 ; (load (expand-file-name "verb.el" (file-name-directory load-file-name)))
 
+;; Vertico vertical completion
+(load (expand-file-name "vertico.el" (file-name-directory load-file-name)))
+
 ;; Marginalia
 (load (expand-file-name "marginalia.el" (file-name-directory load-file-name)))
 
