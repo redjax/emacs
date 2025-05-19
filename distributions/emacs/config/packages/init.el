@@ -50,3 +50,6 @@
 
 ;; Elboc box
 (load (expand-file-name "eldoc-box.el" (file-name-directory load-file-name)))
+
+;; Flycheck
+(load (expand-file-name "flycheck.el" (file-name-directory load-file-name)))
