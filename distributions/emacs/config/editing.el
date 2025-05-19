@@ -17,3 +17,11 @@
 
 ;; Enable vertical completion UI for Fido mode
 (fido-vertical-mode 1)
+
+;; Enable flymake
+(add-hook 'prog-mode-hook #'flymake-mode)
+
+; Customize flymake messages
+(custom-set-faces
+ '(flymake-error ((t (:underline "OrangeRed"))))
+ '(flymake-warning ((t (:underline "yellow")))))
