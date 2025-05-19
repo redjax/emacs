@@ -48,6 +48,9 @@
 ;; Sideline (sidebar)
 (load (expand-file-name "sideline.el" (file-name-directory load-file-name)))
 
+;; Powerline
+(load (expand-file-name "powerline/init.el" (file-name-directory load-file-name)))
+
 ;; Vertico vertical completion
 (load (expand-file-name "vertico.el" (file-name-directory load-file-name)))
 
