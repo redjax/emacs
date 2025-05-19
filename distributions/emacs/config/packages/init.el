@@ -87,5 +87,5 @@
 ;; ! KEEP EVERYTHING BELOW AT THE BOTTOM OF THIS FILE !!
 ;; !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-# Auto-update packages
+;; Auto-update packages
 (load (expand-file-name "auto-package-update.el" (file-name-directory load-file-name)))
