@@ -7,6 +7,9 @@
 (custom-set-variables
  '(warning-suppress-types '((comp) (bytecomp))))
 
+;; Set theme
+(load (expand-file-name "config/theme/init.el" user-emacs-directory))
+
 ;; Import config modules
 (load (expand-file-name "config/keyring.el" user-emacs-directory))
 (load (expand-file-name "config/package-mgr.el" user-emacs-directory))
