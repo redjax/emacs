@@ -13,6 +13,7 @@
 (load (expand-file-name "company-keywords.el" (file-name-directory load-file-name)))
 (load (expand-file-name "company-shell.el" (file-name-directory load-file-name)))
 (load (expand-file-name "company-emoji.el" (file-name-directory load-file-name)))
+(load (expand-file-name "company-jedi.el" (file-name-directory load-file-name)))
 
 ;; Set up company-backends
 (setq company-backends
