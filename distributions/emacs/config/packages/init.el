@@ -44,3 +44,9 @@
 
 ;; Marginalia
 (load (expand-file-name "marginalia.el" (file-name-directory load-file-name)))
+
+;; Consult
+(load (expand-file-name "consult.el" (file-name-directory load-file-name)))
+
+;; Company-mode
+(load (expand-file-name "company-mode/init.el" (file-name-directory load-file-name)))
