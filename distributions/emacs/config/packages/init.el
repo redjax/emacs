@@ -42,6 +42,15 @@
 ;; Verb HTTP client
 ; (load (expand-file-name "verb.el" (file-name-directory load-file-name)))
 
+;; Icomplete vertical
+; (load (expand-file-name "icomplete-vertical.el" (file-name-directory load-file-name)))
+
+;; Sideline (sidebar)
+(load (expand-file-name "sideline.el" (file-name-directory load-file-name)))
+
+;; Vertico vertical completion
+(load (expand-file-name "vertico.el" (file-name-directory load-file-name)))
+
 ;; Centaur tabs
 (load (expand-file-name "centaur-tabs.el" (file-name-directory load-file-name)))
 
