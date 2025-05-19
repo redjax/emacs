@@ -45,6 +45,9 @@
 ;; Sideline (sidebar)
 (load (expand-file-name "sideline.el" (file-name-directory load-file-name)))
 
+;; Vertico vertical completion
+(load (expand-file-name "vertico.el" (file-name-directory load-file-name)))
+
 ;; Marginalia
 (load (expand-file-name "marginalia.el" (file-name-directory load-file-name)))
 
@@ -53,3 +56,19 @@
 
 ;; Elboc box
 (load (expand-file-name "eldoc-box.el" (file-name-directory load-file-name)))
+
+;; Flycheck
+(load (expand-file-name "flycheck.el" (file-name-directory load-file-name)))
+
+;; Embark
+(load (expand-file-name "embark.el" (file-name-directory load-file-name)))
+
+;; Corfu + cape
+(load (expand-file-name "corfu.el" (file-name-directory load-file-name)))
+(load (expand-file-name "cape.el" (file-name-directory load-file-name)))
+
+;; Consult
+(load (expand-file-name "consult.el" (file-name-directory load-file-name)))
+
+;; Company-mode
+(load (expand-file-name "company-mode/init.el" (file-name-directory load-file-name)))
