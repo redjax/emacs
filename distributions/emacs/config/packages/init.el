@@ -44,3 +44,6 @@
 
 ;; Marginalia
 (load (expand-file-name "marginalia.el" (file-name-directory load-file-name)))
+
+;; Embark
+(load (expand-file-name "embark.el" (file-name-directory load-file-name)))
