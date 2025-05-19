@@ -41,3 +41,6 @@
 
 ;; Verb HTTP client
 ; (load (expand-file-name "verb.el" (file-name-directory load-file-name)))
+
+;; Marginalia
+(load (expand-file-name "marginalia.el" (file-name-directory load-file-name)))
