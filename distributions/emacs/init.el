@@ -23,3 +23,9 @@
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (when (file-exists-p custom-file)
   (load custom-file))
+
+;; Automatically debug on error
+(setq debug-on-error t)
+
+;; Load LSPs
+(load (expand-file-name "config/lsp/init.el" user-emacs-directory))
