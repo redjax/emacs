@@ -88,6 +88,9 @@
 ;; Treemacs
 ; (load (expand-file-name "treemacs.el" (file-name-directory load-file-name)))
 
+;; Yasnippet
+(load (expand-file-name "snippets/init.el" (file-name-directory load-file-name)))
+
 ;; !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ;; ! KEEP EVERYTHING BELOW AT THE BOTTOM OF THIS FILE !!
 ;; !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
