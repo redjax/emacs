@@ -44,3 +44,6 @@
 
 ;; Marginalia
 (load (expand-file-name "marginalia.el" (file-name-directory load-file-name)))
+
+;; Elboc box
+(load (expand-file-name "eldoc-box.el" (file-name-directory load-file-name)))
