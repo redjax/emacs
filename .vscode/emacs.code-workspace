@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"path": "..",
+			"name": "Git root"
+		},
+		{
+			"path": "../scripts/",
+			"name": "Scripts"
+		},
+		{
+			"path": "../distributions/emacs/",
+			"name": "Emacs config distribution"
+		},
+		{
+			"path": "../distributions/doom/",
+			"name": "Doom config distribution"
+		},
+		{
+			"path": "../distributions/spacemacs/",
+			"name": "Spacemacs config distribution"
+		}
+	],
+	"settings": {}
+}
