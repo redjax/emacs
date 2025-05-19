@@ -75,3 +75,11 @@
 
 ;; Company-mode
 (load (expand-file-name "company-mode/init.el" (file-name-directory load-file-name)))
+
+
+;; !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+;; ! KEEP EVERYTHING BELOW AT THE BOTTOM OF THIS FILE !!
+;; !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+# Auto-update packages
+(load (expand-file-name "auto-package-update.el" (file-name-directory load-file-name)))
