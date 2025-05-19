@@ -44,3 +44,6 @@
 
 ;; Marginalia
 (load (expand-file-name "marginalia.el" (file-name-directory load-file-name)))
+
+;; Flycheck
+(load (expand-file-name "flycheck.el" (file-name-directory load-file-name)))
