@@ -1,6 +1,7 @@
 #!/bin/bash
 
 EMACS_VERSION="28.2"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 ## Detect Linux distro ID from /etc/os-release
 get_distro() {
@@ -101,6 +102,9 @@ install_emacs() {
 
 ## If script is called directly, run the install function
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  ## Source nerdfont installer
+  . $SCRIPT_DIR/install-nerdfont.sh
+  install_nerdfont
   install_emacs "$EMACS_VERSION"
   exit $?
 fi
