@@ -75,3 +75,6 @@
 
 ;; Company-mode
 (load (expand-file-name "company-mode/init.el" (file-name-directory load-file-name)))
+
+;; VC-backup (version controlled backups)
+(load (expand-file-name "vc-backup.el" (file-name-directory load-file-name)))
