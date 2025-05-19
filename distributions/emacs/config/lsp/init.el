@@ -30,3 +30,6 @@
 
 ; Python
 (load (expand-file-name "python.el" (file-name-directory load-file-name)))
+
+;; Tell lsp-mode to use capfs
+(setq lsp-completion-provider :capf)

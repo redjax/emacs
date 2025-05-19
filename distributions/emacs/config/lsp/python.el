@@ -4,6 +4,10 @@
   :ensure t
   :commands (lsp lsp-deferred))
 
+;; Prefer pyright over ruff-lsp for python-mode
+(with-eval-after-load 'lsp-mode
+  (setq lsp-disabled-clients '(ruff-ls)))  ;; disables ruff-lsp
+
 (use-package lsp-pyright
   :ensure t
   :after (lsp-mode python)
