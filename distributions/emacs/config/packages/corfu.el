@@ -28,7 +28,10 @@
   ;; Enable optional extension modes:
   (corfu-history-mode)
   (corfu-popupinfo-mode)
-  )
+  ;; Enable yasnippet integration when yasnippet is present
+  (when (require 'yasnippet nil 'noerror)
+  (add-to-list 'completion-at-point-functions #'cape-yasnippet))
+)
 
 ;; A few more useful configurations...
 (use-package emacs
