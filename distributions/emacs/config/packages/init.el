@@ -51,6 +51,9 @@
 ;; Vertico vertical completion
 (load (expand-file-name "vertico.el" (file-name-directory load-file-name)))
 
+;; Centaur tabs
+(load (expand-file-name "centaur-tabs.el" (file-name-directory load-file-name)))
+
 ;; Marginalia
 (load (expand-file-name "marginalia.el" (file-name-directory load-file-name)))
 
