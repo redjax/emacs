@@ -47,3 +47,6 @@
 
 ;; Try (try packages before installing them)
 (load (expand-file-name "try.el" (file-name-directory load-file-name)))
+
+;; Elboc box
+(load (expand-file-name "eldoc-box.el" (file-name-directory load-file-name)))
