@@ -1,4 +1,4 @@
-;; Install & configure incomplete-vertical
+;; Install & configure icomplete-vertical
 (use-package icomplete-vertical
   :ensure t
   ; Don't defer

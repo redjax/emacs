@@ -43,7 +43,7 @@
 ; (load (expand-file-name "verb.el" (file-name-directory load-file-name)))
 
 ;; Incomplete vertical
-; (load (expand-file-name "incomplete-vertical.el" (file-name-directory load-file-name)))
+; (load (expand-file-name "icomplete-vertical.el" (file-name-directory load-file-name)))
 
 ;; Marginalia
 (load (expand-file-name "marginalia.el" (file-name-directory load-file-name)))
