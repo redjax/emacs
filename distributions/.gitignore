@@ -4,3 +4,4 @@ emacs/*
 !emacs/init.el
 !emacs/early-init.el
 !emacs/config
+!emacs/README.md
