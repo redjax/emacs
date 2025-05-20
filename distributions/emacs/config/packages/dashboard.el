@@ -3,13 +3,11 @@
   (package-refresh-contents)
   (package-install 'dashboard))
 
+;; Initialize dashboard
 (require 'dashboard)
 (dashboard-setup-startup-hook)
 
 ;; Configure dashboard
-
-;; Show dashboard in clients opened with emacsclient -c
-(setq initial-buffer-choice (lambda () (get-buffer-create dashboard-buffer-name)))
 
 ;; Use nerd-icons pack
 (setq dashboard-display-icons-p t)
