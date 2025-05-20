@@ -9,6 +9,8 @@
 
 ;; Import config modules
 (load (expand-file-name "config/ui.el" user-emacs-directory))
+(load (expand-file-name "config/startup.el" user-emacs-directory))
+(load (expand-file-name "config/editing.el" user-emacs-directory))
 (load (expand-file-name "config/keyring.el" user-emacs-directory))
 (load (expand-file-name "config/package-mgr.el" user-emacs-directory))
 (load (expand-file-name "config/packages/init.el" user-emacs-directory))
@@ -18,9 +20,6 @@
 
 ;; Load Powerline
 (load (expand-file-name "config/powerline/init.el" user-emacs-directory))
-
-(load (expand-file-name "config/startup.el" user-emacs-directory))
-(load (expand-file-name "config/editing.el" user-emacs-directory))
 
 (custom-set-variables
  '(package-selected-packages '(leaf-keywords leaf)))
