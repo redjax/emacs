@@ -94,6 +94,9 @@
 ;; Yasnippet
 (load (expand-file-name "snippets/init.el" (file-name-directory load-file-name)))
 
+;; Git-timemachine
+(load (expand-file-name "git-timemachine.el" (file-name-directory load-file-name)))
+
 ;; !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ;; ! KEEP EVERYTHING BELOW AT THE BOTTOM OF THIS FILE !!
 ;; !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
