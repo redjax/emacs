@@ -6,7 +6,7 @@
 ;; Catppuccin
 ;; (load (expand-file-name "catppuccin-theme.el" (file-name-directory load-file-name)))
 ;; Nordic night
-(load (expand-file-name "nordic-night-theme.el" (file-name-directory load-file-name)))
+;; (load (expand-file-name "nordic-night-theme.el" (file-name-directory load-file-name)))
 ;; Zeno
 ;; (load (expand-file-name "zeno-theme.el" (file-name-directory load-file-name)))
 ;; Melancholy
@@ -17,22 +17,20 @@
 ;; (load (expand-file-name "modus-themes.el" (file-name-directory load-file-name)))
 ;; Zenburn
 ;; (load (expand-file-name "zenburn-theme.el" (file-name-directory load-file-name)))
-;; Zenburn
-;; (load (expand-file-name "themes/zenburn-theme.el" user-emacs-directory))
 ;; Spacemacs
-;; (load (expand-file-name "themes/spacemacs-theme.el" user-emacs-directory))
+;; (load (expand-file-name "spacemacs-theme.el" (file-name-directory load-file-name)))
 ;; Gruvbox
-;; (load (expand-file-name "themes/gruvbox-theme.el" user-emacs-directory))
+;; (load (expand-file-name "gruvbox-theme.el" (file-name-directory load-file-name)))
 ;; Ample
-;; (load (expand-file-name "themes/ample-theme.el" user-emacs-directory))
+;; (load (expand-file-name "ample-theme.el" (file-name-directory load-file-name)))
 ;; Moe
-;; (load (expand-file-name "themes/moe-theme.el" user-emacs-directory))
+;; (load (expand-file-name "moe-theme.el" (file-name-directory load-file-name)))
 ;; Atom One Dark
-;; (load (expand-file-name "themes/atom-one-dark-theme.el" user-emacs-directory))
+;; (load (expand-file-name "atom-one-dark-theme.el" (file-name-directory load-file-name)))
 ;; Doom
-;; (load (expand-file-name "themes/doom-themes.el" user-emacs-directory))
+;; (load (expand-file-name "doom-themes.el" (file-name-directory load-file-name)))
 ;; Material
-;; (load (expand-file-name "themes/material-theme.el" user-emacs-directory))
+(load (expand-file-name "material-theme.el" (file-name-directory load-file-name)))
 
 ;; Disable any previously enabled themes for a clean switch
 (mapc #'disable-theme custom-enabled-themes)
@@ -40,7 +38,7 @@
 ;; Activate the theme (uncomment the desired theme's load-theme line):
 
 ;; (load-theme 'catppuccin :no-confirm)
-(load-theme 'nordic-night :no-confirm)
+;; (load-theme 'nordic-night :no-confirm)
 ;; (load-theme 'zeno :no-confirm)
 ;; (load-theme 'melancholy :no-confirm)
 ;; (load-theme 'doom-one :no-confirm)
@@ -52,4 +50,4 @@
 ;; (load-theme 'moe-dark :no-confirm)
 ;; (load-theme 'atom-one-dark :no-confirm)
 ;; (load-theme 'doom-one :no-confirm)
-;; (load-theme 'material :no-confirm)
+(load-theme 'material :no-confirm)
