@@ -97,6 +97,9 @@
 ;; Git-timemachine
 (load (expand-file-name "git-timemachine.el" (file-name-directory load-file-name)))
 
+;; Projectile
+(load (expand-file-name "projectile.el" (file-name-directory load-file-name)))
+
 ;; !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ;; ! KEEP EVERYTHING BELOW AT THE BOTTOM OF THIS FILE !!
 ;; !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
