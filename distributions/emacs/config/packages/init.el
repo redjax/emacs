@@ -100,6 +100,9 @@
 ;; Projectile
 (load (expand-file-name "projectile.el" (file-name-directory load-file-name)))
 
+;; Markdown mode
+(load (expand-file-name "markdown-mode.el" (file-name-directory load-file-name)))
+
 ;; !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ;; ! KEEP EVERYTHING BELOW AT THE BOTTOM OF THIS FILE !!
 ;; !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
