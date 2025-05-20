@@ -9,6 +9,9 @@
   (corfu-preview-current nil)    ;; Disable current candidate preview
   (corfu-preselect 'prompt)      ;; Preselect the prompt
   (corfu-on-exact-match nil)     ;; Configure handling of exact matches
+  (corfu-auto t)                 ;; Enable corfu automatically
+  (corfu-auto-delay 0)           ;; Set corfu suggestions delay in second(s)
+  (setq corfu-auto-prefix 1)     ;; Number of characters to type before completion kicks in
 
   ;; Enable Corfu only for certain modes. See also `global-corfu-modes'.
   :hook ((prog-mode . corfu-mode)
@@ -25,7 +28,10 @@
   ;; Enable optional extension modes:
   (corfu-history-mode)
   (corfu-popupinfo-mode)
-  )
+  ;; Enable yasnippet integration when yasnippet is present
+  (when (require 'yasnippet nil 'noerror)
+  (add-to-list 'completion-at-point-functions #'cape-yasnippet))
+)
 
 ;; A few more useful configurations...
 (use-package emacs
@@ -46,8 +52,5 @@
   ;; useful beyond Corfu.
   (read-extended-command-predicate #'command-completion-default-include-p))
 
-;; Configuration
-
-;; Enable auto completion and configure quitting
-(setq corfu-auto t
-      corfu-quit-no-match 'separator)
+;; Set Python indent options
+(add-hook 'python-mode-hook (lambda () (setq python-indent-offset 4)))

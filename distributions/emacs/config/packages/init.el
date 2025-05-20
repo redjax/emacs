@@ -10,7 +10,7 @@
 (load (expand-file-name "dashboard.el" (file-name-directory load-file-name)))
 
 ;; Magit git interface
-; (load (expand-file-name "magit.el" (file-name-directory load-file-name)))
+(load (expand-file-name "magit.el" (file-name-directory load-file-name)))
 
 ;; Helpful, better help buffer
 (load (expand-file-name "helpful.el" (file-name-directory load-file-name)))
@@ -48,8 +48,17 @@
 ;; Sideline (sidebar)
 (load (expand-file-name "sideline.el" (file-name-directory load-file-name)))
 
+;; Powerline
+;; (load (expand-file-name "powerline/init.el" (file-name-directory load-file-name)))
+
 ;; Vertico vertical completion
 (load (expand-file-name "vertico.el" (file-name-directory load-file-name)))
+
+;; Centaur tabs
+(load (expand-file-name "centaur-tabs.el" (file-name-directory load-file-name)))
+
+;; Avy
+; (load (expand-file-name "avy.el" (file-name-directory load-file-name)))
 
 ;; Marginalia
 (load (expand-file-name "marginalia.el" (file-name-directory load-file-name)))
@@ -74,7 +83,23 @@
 (load (expand-file-name "consult.el" (file-name-directory load-file-name)))
 
 ;; Company-mode
-(load (expand-file-name "company-mode/init.el" (file-name-directory load-file-name)))
+; (load (expand-file-name "company-mode/init.el" (file-name-directory load-file-name)))
+
+;; VC-backup (version controlled backups)
+(load (expand-file-name "vc-backup.el" (file-name-directory load-file-name)))
+
+;; Treemacs
+; (load (expand-file-name "treemacs.el" (file-name-directory load-file-name)))
+
+;; Yasnippet
+(load (expand-file-name "snippets/init.el" (file-name-directory load-file-name)))
 
 ;; Git-timemachine
 (load (expand-file-name "git-timemachine.el" (file-name-directory load-file-name)))
+
+;; !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+;; ! KEEP EVERYTHING BELOW AT THE BOTTOM OF THIS FILE !!
+;; !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+;; Auto-update packages
+(load (expand-file-name "auto-package-update.el" (file-name-directory load-file-name)))

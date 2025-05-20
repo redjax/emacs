@@ -8,13 +8,23 @@
 (global-hl-line-mode t)
 
 ;; Set a simple theme
-(load-theme 'tango-dark t)
+; (load-theme 'tango-dark t)
 
 ;; Enable matching parentheses highlighting
 (show-paren-mode 1)
 
-;; Set default font size
-(set-face-attribute 'default nil :height 110)
+;; Function to set font
+(defun font-available-p (font-name)
+  (find-font (font-spec :name font-name)))
+
+;; Set default font
+(cond
+ ((font-available-p "Fira Code")
+  (set-frame-font "Fira Code-12"))
+ ((font-available-p "JetBrains Mono")
+  (set-frame-font "JetBrains Mono-12"))
+ ((font-available-p "DejaVu Sans Mono")
+  (set-frame-font "DejaVu Sans Mono-12")))
 
 ;; Enable mouse mode
 (unless (display-graphic-p)
