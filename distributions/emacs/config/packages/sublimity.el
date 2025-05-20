@@ -8,7 +8,7 @@
 ;; Optional imports
 (require 'sublimity-scroll)
 ; (require 'sublimity-map) ;; experimental
-(require 'sublimity-attractive)
+; (require 'sublimity-attractive)
 
 ;; Call sublimity
 (sublimity-mode 1)
