@@ -7,15 +7,19 @@
 (custom-set-variables
  '(warning-suppress-types '((comp) (bytecomp))))
 
-;; Set theme
-(load (expand-file-name "config/theme/init.el" user-emacs-directory))
-
 ;; Import config modules
+(load (expand-file-name "config/ui.el" user-emacs-directory))
 (load (expand-file-name "config/keyring.el" user-emacs-directory))
 (load (expand-file-name "config/package-mgr.el" user-emacs-directory))
 (load (expand-file-name "config/packages/init.el" user-emacs-directory))
+
+;; Set theme before loading packages with powerline
+(load (expand-file-name "config/theme/init.el" user-emacs-directory))
+
+;; Load Powerline
+(load (expand-file-name "config/powerline/init.el" user-emacs-directory))
+
 (load (expand-file-name "config/startup.el" user-emacs-directory))
-(load (expand-file-name "config/ui.el" user-emacs-directory))
 (load (expand-file-name "config/editing.el" user-emacs-directory))
 
 (custom-set-variables

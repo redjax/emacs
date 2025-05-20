@@ -49,7 +49,7 @@
 (load (expand-file-name "sideline.el" (file-name-directory load-file-name)))
 
 ;; Powerline
-(load (expand-file-name "powerline/init.el" (file-name-directory load-file-name)))
+;; (load (expand-file-name "powerline/init.el" (file-name-directory load-file-name)))
 
 ;; Vertico vertical completion
 (load (expand-file-name "vertico.el" (file-name-directory load-file-name)))
@@ -93,6 +93,9 @@
 
 ;; Yasnippet
 (load (expand-file-name "snippets/init.el" (file-name-directory load-file-name)))
+
+;; Git-timemachine
+(load (expand-file-name "git-timemachine.el" (file-name-directory load-file-name)))
 
 ;; !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ;; ! KEEP EVERYTHING BELOW AT THE BOTTOM OF THIS FILE !!
