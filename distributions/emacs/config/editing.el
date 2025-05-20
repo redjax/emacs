@@ -25,3 +25,7 @@
 (custom-set-faces
  '(flymake-error ((t (:underline "OrangeRed"))))
  '(flymake-warning ((t (:underline "yellow")))))
+
+;; Autosave
+; (auto-save-mode 1) ; every 300 keystrokes
+; (setq auto-save-timeout 20) ; every 20 seconds
