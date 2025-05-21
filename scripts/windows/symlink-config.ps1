@@ -47,6 +47,32 @@ function Test-IsAdmin {
     return ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")
 }
 
+function New-WindowsEmacsPointer {
+    $PointerFile = Join-Path $env:APPDATA ".emacs"
+    #     $PointerFileContents = @"
+    # (setq user-init-file "$($PointerFile -replace '\\', '/')")
+    # (setq user-emacs-directory "$($EMACSD -replace '\\', '/')")
+    # (setq default-directory "$($env:USERPROFILE -replace '\\', '/')")
+    # (setenv "HOME" "$($env:USERPROFILE -replace '\\', '/')")
+    # (load user-init-file)
+    # "@
+    $PointerFileContents = @"
+(load (expand-file-name "init.el" "~/.emacs.d/"))
+"@
+    
+    Write-Host "Creating .emacs file at path $PointerFile"
+
+    try {
+        ## Echo the $PointerFileContents into .emacs file
+        Set-Content -Path $PointerFile -Value $PointerFileContents
+    }
+    catch {
+        Write-Error "Failed to create .emacs file at path $PointerFile"
+        Write-Error "Exception details: $($_.Exception.Message)"
+        exit 1
+    }
+}
+
 function Backup-ExistingConfig {
     param(
         [string]$Path
@@ -160,6 +186,16 @@ else {
     Write-Warning "Not running as administrator. Falling back to copy."
     Write-Warning "You will need to re-run this script after updating your repo."
     Safe-Copy -Source $ConfigSrc -Dest $ConfigDest
+}
+
+## Create .emacs pointer file
+try {
+    New-WindowsEmacsPointer
+}
+catch {
+    Write-Error "Failed to create .emacs file at path $PointerFile"
+    Write-Error "Exception details: $($exc.Message)"
+    exit 1
 }
 
 Write-Info "Installed $Config configuration successfully."
