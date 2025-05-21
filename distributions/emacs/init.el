@@ -38,3 +38,6 @@
 
 ;; Load LSPs
 (load (expand-file-name "config/lsp/init.el" user-emacs-directory))
+
+;; Load org-mode configuration
+(load (expand-file-name "config/org/init.el" user-emacs-directory))
