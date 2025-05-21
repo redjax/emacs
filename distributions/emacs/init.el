@@ -7,6 +7,9 @@
 (custom-set-variables
  '(warning-suppress-types '((comp) (bytecomp))))
 
+;; Enable package management
+(require 'package)
+
 ;; Import config modules
 (load (expand-file-name "config/ui.el" user-emacs-directory))
 (load (expand-file-name "config/startup.el" user-emacs-directory))
