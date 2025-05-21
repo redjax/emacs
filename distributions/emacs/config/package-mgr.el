@@ -1,4 +1,4 @@
-(require 'package)
+;; (require 'package)
 
 ;; Setup package archives
 (setq package-archives
