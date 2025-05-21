@@ -90,6 +90,59 @@ When I try new distributions, I put their configuration in [the `distributions/`
 | `C-u C-SPC`                         | Jump to a mark                                                                                                                                                                                      |
 | `C-x k`                             | Open kill buffer menu                                                                                                                                                                               |
 
+## Fix common issues
+
+These are the problem I run into most often.
+
+### Fix Magit requires 'seq' warning
+
+After installing `magit`, you may see an error like the one below. The instructions to fix it are writting in the warning, and documented beneath the warning text.
+
+```shell
+1 Emergency (magit): Magit requires ‘seq’ >= 2.24,
+2 but due to bad defaults, Emacs’ package manager, refuses to
+3 upgrade this and other built-in packages to higher releases
+4 from GNU Elpa.
+5
+6 To fix this, you have to add this to your init file:
+7
+8   (setq package-install-upgrade-built-in t)
+9
+10 Then evaluate that expression by placing the cursor after it
+11 and typing C-x C-e.
+12
+13 Once you have done that, you have to explicitly upgrade ‘seq’:
+14
+15   M-x package-install seq \‘RET’
+16
+17 Then you also must make sure the updated version is loaded,
+18 by evaluating this form:
+19
+20   (progn (unload-feature 'seq t) (require 'seq))
+21
+22 If this does not work, then try uninstalling Magit and all of its
+23 dependencies.  After that exit and restart Emacs, and only then
+24 reinstalling Magit.
+25
+26 If you don’t use the ‘package’ package manager but still get
+27 this warning, then your chosen package manager likely has a
+28 similar defect.
+
+```
+
+To fix this, follow the instructions in the warning:
+
+- Add `(setq package-install-upgrade-built-in t)` to your emacs configuration, i.e. in the [`magit.el` file](./distributions/emacs/config/packages/magit.el) or [`init.el`](./distributions/emacs/init.el).
+- Open a "scratch" buffer and paste the following:
+  - `(progn (unload-feature 'seq t) (require 'seq))`
+- Put your cursor at the end of the line and run `C-x C-e` (`CTRL+x` then, still holding `CTRL`, `CTRL+e`)
+- Then, upgrade the `seq` package by Running `M-x package-upgrade seq 'RET'`
+  - This means to press `ALT+x`, type `package-upgrade` and hit `Return`/`Enter`
+- Uninstall `magit` but running `M-x package-uninstall magit RET`
+- Close and re-open emacs to re-install magit
+
+You only need to do this once, the first time you clone the repository/add this config and install `magit`.
+
 ## Links
 
 - [masteringemacs.org - Useful guides & examples for working with emacs](https://masteringemacs.org)
