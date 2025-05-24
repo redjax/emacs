@@ -146,17 +146,16 @@ function Safe-Copy {
 
 # Set config source/destination based on choice
 $CWD = Get-Location
-$DOTCONFIG = Join-Path $env:USERPROFILE ".config"
-$EMACSD = Join-Path $env:USERPROFILE ".emacs.d"
+$EMACSD = (Join-Path $env:APPDATA ".emacs.d")
 
 switch ($Config) {
     "doom" {
         $ConfigSrc = Join-Path $CWD "distributions/doom"
-        $ConfigDest = Join-Path $DOTCONFIG "doom"
+        $ConfigDest = Join-Path $env:APPDATA "doom"
     }
     "spacemacs" {
         $ConfigSrc = Join-Path $CWD "distributions/spacemacs"
-        $ConfigDest = Join-Path $env:USERPROFILE ".spacemacs.d"
+        $ConfigDest = Join-Path $env:APPDATA ".spacemacs.d"
     }
     "emacs" {
         $ConfigSrc = Join-Path $CWD "distributions/emacs"
@@ -189,13 +188,13 @@ else {
 }
 
 ## Create .emacs pointer file
-try {
-    New-WindowsEmacsPointer
-}
-catch {
-    Write-Error "Failed to create .emacs file at path $PointerFile"
-    Write-Error "Exception details: $($exc.Message)"
-    exit 1
-}
+# try {
+#     New-WindowsEmacsPointer
+# }
+# catch {
+#     Write-Error "Failed to create .emacs file at path $PointerFile"
+#     Write-Error "Exception details: $($exc.Message)"
+#     exit 1
+# }
 
 Write-Info "Installed $Config configuration successfully."
