@@ -1,3 +1,5 @@
+$EmacsVersion = "30.1"
+
 function Install-Emacs {
     if ( Get-Command "emacs" -ErrorAction SilentlyContinue ) {
         Write-Host "Emacs is already installed." -ForegroundColor Green
@@ -18,7 +20,7 @@ function Install-Emacs {
 
 function Set-EmacsBinPath {
     # Set path to Emacs bin directory
-    $emacsBin = "C:\Program Files\Emacs\bin"
+    $emacsBin = "C:\Program Files\Emacs\emacs-$($EmacsVersion)\bin"
 
     ## Get the current user PATH
     $currentPath = [Environment]::GetEnvironmentVariable("PATH", "User")

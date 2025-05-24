@@ -11,7 +11,6 @@ if ( -Not ( Get-Command "git" -ErrorAction SilentlyContinue ) ) {
     }
 }
 
-Write-Host "Running Spacemacs install script"
 if ( -Not ( Get-Command "emacs" -ErrorAction SilentlyContinue ) ) {
     try {
         . "$($ScriptDir)/install_emacs.ps1"
@@ -22,6 +21,7 @@ if ( -Not ( Get-Command "emacs" -ErrorAction SilentlyContinue ) ) {
     }
 }
 
+Write-Host "Installing spacemacs"
 ## Clone spacemacs
 try {
     git clone https://github.com/syl20bnr/spacemacs "$($env:AppData)/.emacs.d"
